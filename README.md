@@ -1,5 +1,5 @@
 # Welcome to RECORD!
-RECORD is a microcontroller-based system for the design and implementation of behavioural trials with the ability to synchronise with other external nerual recording systems. RECORD has a variety of applications, but its main purpose is for behavioural neuroscience implementations.
+RECORD is a microcontroller-based system for the design and implementation of behavioural trials with the ability to synchronise with other external neural recording systems. RECORD has a variety of applications, but its main purpose is for behavioural neuroscience implementations.
 
 The system offers modularity and customisability at its core. It includes 3D-printed components, electronics, and software.
 ## 3D printing
