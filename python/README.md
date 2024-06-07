@@ -1,5 +1,7 @@
 # Welcome to RECORD/python!
-This folder contains all Python scripts and libraries made for the RECORD system. All code was written using the Spyder IDE contained within [Anaconda](https://www.anaconda.com/). 
+This folder contains all Python scripts and libraries made for the RECORD system. The code in this section was written as an alternative way to make use of the RECORD system without the need for licensed software such as [Ethovision](https://www.noldus.com/ethovision-xt). Our Python scripts are designed to be self-contained driving software for RECORD that allows it to be run in conjunction with other free, open-source software specifically for animal tracking solutions such as [Bonsai](https://open-ephys.org/bonsai), [B-SOID](https://github.com/YttriLab/B-SOID), [DeepLabCut](https://github.com/DeepLabCut/DeepLabCut), and [SLEAP](https://github.com/talmolab/sleap).
+
+All code was written using the Spyder IDE contained within [Anaconda](https://www.anaconda.com/). 
 
 ## Dependencies
 These scripts were written using a variety of packages, namely:
