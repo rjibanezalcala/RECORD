@@ -12,7 +12,7 @@ This repository contains 3 files:
  These three files must be flashed to the microcontroller in order for the RECORD system to work. The 'mcucfg.h' file may be named something else and multiple copies can be made for a setup using multiple RECORD arenas, however, make sure that the 'RECORD.h' file references the correct 'cfg' file when flashing.
 
 ## A note on HARP compliance
-RECORD firmware is currently not [HARP](https://harp-tech.org/) compliant, however, we are working on this and will be adding HARD compatibility in a future release!
+RECORD firmware is currently not [HARP](https://harp-tech.org/) compliant, however, we are working on this and will be adding HARP compatibility in a future release!
 
 # Updates
 A rundown of the current version's most recent changes will be shown here!
