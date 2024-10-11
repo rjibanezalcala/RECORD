@@ -9,7 +9,7 @@ We have personally designed every 3D-printed component of the system, and have p
 ## Electronic hardware and firmware
 The electronics that drive the RECORD system are cheap but effective. We use an embedded systems approach to allow for customisable trials that can either be automated, or performed manually. The embedded electronics work on a command-servicing routine, which will make the electronics react to commands sent by the user via serial communications.
 
-We chose the [Texas Instruments MSP430-FR2355 microcontroller](https://www.ti.com/tool/MSP-EXP430FR2355) due to its price and versatility. All of RECORD's [microcontroller firmware](https://github.com/rjibanezalcala/RECORD/tree/main/microcontroller) can be found within this repository.
+We chose the [Texas Instruments MSP430-FR2355 microcontroller](https://www.ti.com/tool/MSP-EXP430FR2355) due to its low price (~13 USD) and versatility. All of RECORD's [microcontroller firmware](https://github.com/rjibanezalcala/RECORD/tree/main/microcontroller) can be found within this repository.
 
 Our custom-designed PCB is a hub for signals to be relayed from the microcontroller to our rodent arenas. We provide all [Gerber files](https://github.com/rjibanezalcala/RECORD/tree/main/pcb) in this repository.
 
