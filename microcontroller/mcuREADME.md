@@ -1,7 +1,7 @@
 # Welcome to RECORD/microcontroller!
 The code in this repository was written for the [MSP430-FR2355 microcontroller development kit](https://www.ti.com/tool/MSP-EXP430FR2355) in [Texas Instrument's Code Composer Studio 11.1.0](https://www.ti.com/tool/download/CCSTUDIO/11.1.0.00011).
 
-# Files
+# Firmware
 This repository contains 3 files:
 
  1. 'main.c' file: The microcontroller firmware. This code is essential for the functionality of the microcontroller system and will call the other two files. It contains setup and initialisation, the command servicing routine, interrupt servicing routines, and main variable definitions.
@@ -10,6 +10,9 @@ This repository contains 3 files:
 	 - This file contains variables essential to the brightness of the cost lights, as they will control the pulse width-modulated signal that turns on the cost lights.  **Make sure these values are calibrated to your setup's specific needs!**
  
  These three files must be flashed to the microcontroller in order for the RECORD system to work. The 'mcucfg.h' file may be named something else and multiple copies can be made for a setup using multiple RECORD arenas, however, make sure that the 'RECORD.h' file references the correct 'cfg' file when flashing.
+
+## A note on HARP compliance
+RECORD firmware is currently not [HARP](https://harp-tech.org/) compliant, however, we are working on this and will be adding HARD compatibility in a future release!
 
 # Updates
 A rundown of the current version's most recent changes will be shown here!
