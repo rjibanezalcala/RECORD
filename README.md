@@ -3,6 +3,8 @@ The the REward-COst in Rodent Decision-making (RECORD) is a microcontroller-base
 
 The system offers modularity and customisability at its core. It includes 3D-printed components, electronics, and software.
 
+[Check out out published paper on Nature Communications Biology!](https://doi.org/10.1038/s42003-024-06489-8)
+
 ## 3D printing
 We have personally designed every 3D-printed component of the system, and have provided the [AutoCAD files](https://github.com/rjibanezalcala/RECORD/tree/main/3d-prints/cad) for editing, and the [STL files](https://github.com/rjibanezalcala/RECORD/tree/main/3d-prints/stl) for printing directly. 
 
