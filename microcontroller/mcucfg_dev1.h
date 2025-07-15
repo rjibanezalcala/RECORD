@@ -60,11 +60,11 @@ unsigned long TTL_LENGTH = 100;     // Default length of output TTL pulse, in mi
 */
 struct MCUinfo Device = { .device    = "MSP-EXP430FR2355 Rev. A",
                           .device_id = "FR2355_Dev",
-                          .firm_ver  = "v2.2.0",
+                          .firm_ver  = "v2.2.1",
                           .lib_ver   = "v1.2",
                           .cfg_ver   = "v0.2",
                           // User, update these accordingly.
-                          .updated   = "17-February-2023"};
+                          .updated   = "27-June-2025"};
 
 /* -------- Independent Variables ---------------------------------------------------------------------------------- */
 
