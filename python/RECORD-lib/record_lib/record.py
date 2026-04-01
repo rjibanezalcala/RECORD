@@ -13,8 +13,8 @@ import time
 import datetime
 
 class RECORD:
-    def __init__(self):
-        pass
+    def __init__(self, **kwargs):
+        self.verbose = kwargs.get('verbose', 0)
     
     def createSS(self, **kwargs):
         # Create a serial session tailored to the MSP430-FR2355 microcontroller
@@ -26,15 +26,9 @@ class RECORD:
         # Default values are based on microcontroller settings defined in
         # firmware.
         
-        # Serial comms information
-        # com_port    = kwargs.get("com_port",'COM4')
-        # baud_rate   = kwargs.get("baud_rate",9600)
-        # data_bits   = kwargs.get("data_bits",8)
-        # parity      = kwargs.get("parity",'N')
-        # stop_bits   = kwargs.get("stop_bits",1)
-        # flow_ctrl   = kwargs.get("flow_ctrl",0)
         # Microcontroller information
         self.ttlin_state = "Unknown"
+        self.ttlout_state = False
         
         # Make the serial session object and introduce the parameters given by
         # kwargs or introduce default values.
@@ -70,7 +64,14 @@ class RECORD:
         # Returns 0 and the time when the command was sent if no exceptions
         # occur, otherwise returns -1.
         
-        command = '#F'+str(fdr)+'L'+str(lvl)
+        if isinstance(fdr, list) and isinstance(lvl, list):
+            command = r'#'
+            for x, y in zip(fdr,lvl):
+                command += fr"F{str(x)}L{str(y)}"
+            command += r' '
+        else:
+            command = '#F'+str(fdr)+'L'+str(lvl)+' '
+        
         command = bytes(command, 'utf-8')
         
         try:
@@ -356,6 +357,23 @@ class RECORD:
         except:
             return -1, ts
     
+    def buffer_command(self, command, 
+                       ttl_length=0.1,
+                       enforce_delay=True):
+        try:
+            self.session.write(bytes(f'*{command} '))
+            ts = datetime.datetime.now()
+            resp = self.fetch_response()
+            print(resp)
+            
+            if enforce_delay:
+                # Wait for TTL signal and for the microcontroller to execute command.
+                time.sleep(ttl_length)
+                
+            return self.ttlin_state, ts
+        except:
+            return -1, ts
+    
     def send_cmd(self,cmd,
                  ttl_length=0.1,
                  enforce_delay=True):
@@ -436,6 +454,8 @@ class RECORD:
         # Precautionary measure to clear the buffer from any stray characters
         # possibly left from the process above.
         self.session.flushOutput()
+        
+        if self.verbose: print("  ", response)
         
         return response, ts
     
@@ -610,3 +630,15 @@ class RECORD:
         except Exception as e:
             print(e)
             return -1, ts
+        
+if __name__ == "__main__":
+    
+    mcu = RECORD(verbose=1)
+    
+    session = mcu.createSS(com_port = "COM6")
+    session.open()
+    mcu.all_active()
+    time.sleep(2)
+    mcu.all_inactive()
+    
+    session.close()
